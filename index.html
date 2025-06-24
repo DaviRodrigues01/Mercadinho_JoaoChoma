@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercadinho Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="auth">
+        <h2>Mercadinho Digital</h2>
+
+        <div id="login-form">
+            <h3>Login</h3>
+            <input type="email" id="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" placeholder="Senha" required>
+            <button onclick="login()">Entrar</button>
+            <p>Não tem conta? <a href="#" onclick="showRegister()">Cadastre-se</a></p>
+        </div>
+
+        <div id="register-form" class="hidden">
+            <h3>Cadastro</h3>
+            <input type="text" id="register-name" placeholder="Nome" required>
+            <input type="email" id="register-email" placeholder="Email" required>
+            <input type="password" id="register-password" placeholder="Senha" required>
+            <button onclick="register()">Cadastrar</button>
+            <p>Já tem conta? <a href="#" onclick="showLogin()">Faça Login</a></p>
+        </div>
+    </div>
+
+    <div id="app" class="hidden">
+        <header>
+            <h1>Mercadinho Digital</h1>
+            <div>
+                <button onclick="toggleCart()">🛒 Carrinho (<span id="cart-count">0</span>)</button>
+                <button onclick="logout()">Sair</button>
+            </div>
+        </header>
+
+        <main>
+            <section id="products">
+                <h2>Catálogo de Produtos</h2>
+                <div id="product-list"></div>
+            </section>
+
+            <section id="cart" class="hidden">
+                <h2>Seu Carrinho</h2>
+                <div id="cart-items"></div>
+                <p id="cart-total"></p>
+                <button onclick="checkout()">Finalizar Compra</button>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
